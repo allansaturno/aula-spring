@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("contato")
@@ -21,7 +22,7 @@ public class ContatosController {
     }
 
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") Long id){
+    public Contato findById(@PathVariable("id") Long id){
         return contatoService.findById(id);
     }
 

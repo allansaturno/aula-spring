@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ContatoService {
@@ -17,7 +18,7 @@ public class ContatoService {
         return contatoRepository.findAll();
     }
 
-    public String findById(Long id) {
-        return "Aqui tem que retornar os dados do id " + id;
+    public Contato findById(Long id) {
+        return contatoRepository.getById(id);
     }
 }

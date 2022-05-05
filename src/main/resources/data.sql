@@ -1,0 +1,4 @@
+INSERT INTO CONTATO (id_contato, nome, telefone, email, dt_criacao, dt_atualizacao, status) values (1, 'Nome 1', '1112341234', 'teste1@teste.com.br', now(), now(), true);
+INSERT INTO CONTATO (id_contato, nome, telefone, email, dt_criacao, dt_atualizacao, status) values (2, 'Nome 2', '2212341234', 'teste2@teste.com.br', now(), now(), true);
+INSERT INTO CONTATO (id_contato, nome, telefone, email, dt_criacao, dt_atualizacao, status) values (3, 'Nome 3', '3312341234', 'teste3@teste.com.br', now(), now(), true);
+INSERT INTO CONTATO (id_contato, nome, telefone, email, dt_criacao, dt_atualizacao, status) values (4, 'Nome 4', '4412341234', 'teste4@teste.com.br', now(), now(), true);

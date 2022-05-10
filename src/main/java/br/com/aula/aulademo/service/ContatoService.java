@@ -14,11 +14,24 @@ public class ContatoService {
     @Autowired
     private ContatoRepository contatoRepository;
 
-    public List<Contato> findAll(){
+    public List<Contato> findAll() {
         return contatoRepository.findAll();
     }
 
     public Contato findById(Long id) {
-        return contatoRepository.getById(id);
+        return contatoRepository.findById(id).get();
+    }
+
+    public Contato save(Contato contato) {
+        return contatoRepository.save(contato);
+    }
+
+    public Contato update(Contato contato) {
+        return contatoRepository.save(contato);
+    }
+
+    public String delete(Long id) {
+        contatoRepository.deleteById(id);
+        return "EXCLUIDO!";
     }
 }

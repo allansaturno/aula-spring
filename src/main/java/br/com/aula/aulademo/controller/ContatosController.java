@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("contato")
@@ -27,17 +26,18 @@ public class ContatosController {
     }
 
     @PostMapping
-    public String save(@RequestBody String corpo){
-        return null;
+    public Contato save(@RequestBody Contato contato){
+        return contatoService.save(contato);
     }
 
     @PutMapping
-    public String update(@RequestBody String corpo){
-        return null;
+    public Contato update(@RequestBody Contato contato){
+        return contatoService.update(contato);
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") Long id){
-        return null;
+        return contatoService.delete(id);
     }
+
 }

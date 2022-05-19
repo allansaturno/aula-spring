@@ -1,5 +1,7 @@
 package br.com.aula.aulademo.controller;
 
+import br.com.aula.aulademo.dto.request.ContatoRequestDTO;
+import br.com.aula.aulademo.dto.response.ContatoResponseDTO;
 import br.com.aula.aulademo.model.Contato;
 import br.com.aula.aulademo.service.ContatoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,27 +18,27 @@ public class ContatosController {
     private ContatoService contatoService;
 
     @GetMapping
-    public List<Contato> findAll(){
+    public List<ContatoResponseDTO> findAll() {
         return contatoService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Contato findById(@PathVariable("id") Long id){
+    public Contato findById(@PathVariable("id") Long id) {
         return contatoService.findById(id);
     }
 
     @PostMapping
-    public Contato save(@RequestBody Contato contato){
-        return contatoService.save(contato);
+    public ContatoResponseDTO save(@RequestBody ContatoRequestDTO contatoRequestDTO) {
+        return contatoService.save(contatoRequestDTO);
     }
 
     @PutMapping
-    public Contato update(@RequestBody Contato contato){
-        return contatoService.update(contato);
+    public Contato update(@RequestBody ContatoRequestDTO contatoRequestDTO) {
+        return contatoService.update(contatoRequestDTO);
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") Long id){
+    public String delete(@PathVariable("id") Long id) {
         return contatoService.delete(id);
     }
 
